@@ -1,0 +1,110 @@
+// General styles go here
+/*  to set the base font-size */
+html {
+    font-size: 62.5%;
+}
+
+/* to style the body tag */
+body {
+    font-family: $primary-font;
+    font-size: 2rem;
+    color: $primary-color;
+    line-height: 3.2rem;
+}
+
+/* to style the wrapper classes */
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+}
+.wrapper2 ,.wrapper3 {
+ max-width:1200px;
+ width: 100%;
+}
+.wrapper2 {
+    margin-left: 0;
+    margin-right: auto;
+}
+.wrapper3 {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* to reset the margin and padding for some elements */
+h1, h2, h3,h4, ul, img, body, p, input, textarea, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* to remove the list style from any list */
+ul {
+    list-style: none;
+}
+
+/* to style all the links */
+a {
+    text-decoration: none;
+    color: inherit;
+    font: inherit;
+    display: inline-block;
+}
+
+/* to style all the links when hover or focus  */
+a:hover, a:focus{
+    color: $accent-color-2;
+}
+
+/* to style all the images */
+img {
+   max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* to style all the buttons */
+button {
+    background-color: $accent-color-1;
+    width: 200px;
+    height: 50px;
+    font: inherit;
+    border: none;
+    @include  bold-font;
+    cursor: pointer;
+}
+
+/* to style the buttons when hover or focus */
+button:hover, button:focus {
+   background-color: darken( $accent-color-1, 10% );
+}
+
+/* to style the heading(1-4) and the logo */
+h1, 
+h2, 
+h3, 
+h4 {
+    @include  bold-font; 
+}
+
+/* to style heading 1 */
+h1 {
+    font-family: 'Lora', serif;
+    font-size: 8rem;
+    line-height: 9.2rem;
+    letter-spacing: normal;
+}
+
+// /* to style heading 2 */
+h2 {
+    font-size: 4.2rem;
+}
+
+/* to style heading 3 */
+h3 {
+    font-size: 3.2rem;
+}
+
+/* to style heading 4 */
+h4 {
+    font-size: 2.4rem;
+}

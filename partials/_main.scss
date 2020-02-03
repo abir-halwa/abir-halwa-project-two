@@ -1,0 +1,282 @@
+//to style the home page main tag
+// to style the who-is section
+.who-is {
+  *:not(:last-child) {
+    margin-bottom: 3%;
+  }
+  padding: 15vh 0;
+  background-color: $light-color;
+}
+
+//to style the sophie-stuff section
+.sophie-stuff {
+  @include flex;
+  position: relative;
+  .sophie-stuff-img {
+    position: relative;
+    img {
+      display: inline-block;
+    }
+  }
+  .sophie-stuff-txt {
+    @include flex(space-between);
+    flex-direction: column;
+    *:not(:last-child) {
+      margin-bottom: 3vh;
+    }
+  }
+}
+//to style the first row in the sophie-stuff section
+.sophie-stuff-row-1 {
+  top: -3vh;
+  margin-bottom: 5vh;
+  .sophie-stuff-bg {
+    width: 52%;
+    background-color: $accent-color-2;
+    .sophie-stuff-img {
+      top: -2vh;
+      right: 2%;
+      text-align: right;
+    }
+  }
+  .sophie-stuff-txt {
+    width: 48%;
+    padding: 20vh 7% 0 5%;
+  }
+}
+//to style the second row in the .sophie-stuff section
+.sophie-stuff-row-2 {
+  bottom: -5vh;
+  .sophie-stuff-bg {
+    width: 48%;
+    background-color: $secondary-color;
+    .sophie-stuff-img {
+      left: -2%;
+      bottom: 2vh;
+    }
+  }
+  .sophie-stuff-txt {
+    width: 52%;
+    padding: 0 5% 20vh 9%;
+    position: relative;
+    top: -2vh;
+    text-align: right;
+    align-items: flex-end;
+  }
+}
+
+//to style important-links section
+.important-links {
+  background-color: $light-color;
+  padding: 15vh 0;
+  ul {
+    flex-wrap: wrap;
+    @include flex(space-between);
+    li {
+      @include flex;
+      width: calc(100% / 2 - 3%);
+      &:nth-child(1),
+      li:nth-child(2) {
+        margin-bottom: 10vh;
+      }
+      .icon {
+        background-color: $secondary-color;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        border-radius: 50%;
+        margin-right: 5%;
+      }
+      .description {
+        width: calc(95% - 60px);
+      }
+    }
+  }
+}
+// to style the gallery section
+.gallery {
+  padding: 10vh 0;
+  ul {
+    @include flex(space-between);
+    li:not(:last-child) {
+      margin-right: 3%;
+    }
+  }
+}
+
+//to style the image in full-img section
+.full-img {
+  width: 100%;
+}
+
+//to style the journey section
+.journey {
+  background-color: $light-color;
+  padding: 15vh 0;
+  .wrapper {
+    @include flex;
+    .journey-img {
+      width: 30%;
+      filter: drop-shadow(20px 20px $secondary-color);
+      margin-right: 5%;
+    }
+    .journey-txt {
+      width: 70%;
+      @include flex(space-between);
+      flex-direction: column;
+      *:not(:last-child) {
+        margin-bottom: 5%;
+      }
+    }
+  }
+}
+//---------------- end of home page main tag styles------------------
+
+//---------------- blog and contact-us  main tag styles ------------------
+.pages-main {
+  background-color: $light-color;
+  padding-top: 10vh;
+  .pages-content {
+    @include flex(flex-start, flex-start);
+    .left-part {
+      width: 33%;
+      margin-right: 4%;
+    }
+    .right-part {
+      width: 63%;
+      margin-bottom: 15vh;
+    }
+  }
+}
+//---------------- end of blog and contact-us main tag styles ------------------
+
+//----------------styles of main tag in blog page ------------------
+//to style the aside
+aside {
+  padding: 9%;
+  background: #fff;
+  &:first-child {
+    margin-bottom: 5%;
+    *:not(:last-child) {
+      margin-bottom: 5%;
+    }
+  }
+  .find-out {
+    color: $dark-color-1;
+    font-weight: 700;
+    &:hover,
+    &:focus {
+      color: $accent-color-2;
+    }
+  }
+  h3 {
+    font-size: 2.4rem;
+    margin-bottom: 5%;
+  }
+  ul {
+    padding-left: 10%;
+    li {
+      &::before {
+        content: "•";
+        color: $secondary-color;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+    }
+  }
+}
+//to style the article
+article {
+  .article-container {
+    background: #fff;
+    padding: 8vh 5%;
+    border-bottom: 10px solid $secondary-color;
+    margin-bottom: 5%;
+  }
+  .colored {
+    color: $dark-color-1;
+    font-weight: 700;
+  }
+  *:not(:last-child) {
+    margin-bottom: 4vh;
+  }
+  &.comment {
+    display: flex;
+    &:first-child {
+      border-bottom: none;
+    }
+    .commenter-img {
+      width: 14%;
+      margin-right: 3%;
+    }
+    .comment-txt {
+      width: 83%;
+    }
+  }
+}
+//---------------- end of styles of main tag in blog page ------------------
+
+//----------------styles of main tag in contact-us page ------------------
+//form styles
+form {
+  > *:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  div {
+    display: flex;
+    input {
+      width: 49%;
+      height: 80px;
+      border: none;
+      display: block;
+      padding: 2%;
+      &::placeholder {
+        font-style: italic;
+        color: $dark-color-2;
+        opacity: 1; //to remove the defaul opacity
+      }
+    }
+    input[type="text"] {
+      margin-right: 2%;
+    }
+  }
+  textarea {
+    width: 100%;
+    padding: 2%;
+    resize: none;
+    border: none;
+    &::placeholder {
+      font-style: italic;
+      color: $dark-color-2;
+      opacity: 1;
+    }
+  }
+  button {
+    width: 100%;
+  }
+}
+//contact info styles
+.contact-info {
+  padding: 3%;
+  background: #fff;
+  > *:not(:last-child) {
+    margin-bottom: 5%;
+  }
+  .social-media {
+    // to style the social media links
+    color: $secondary-color;
+    display: flex;
+    font-size: 3rem;
+    font-weight: 700;
+    li {
+      margin-right: 10%;
+    }
+  }
+  // to style the address block
+  address {
+    font-style: normal;
+    line-height: 3rem;
+  }
+}

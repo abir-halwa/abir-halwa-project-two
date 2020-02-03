@@ -1,0 +1,104 @@
+// to style the header in all the pages
+header:not(.article-header) {
+  background-color: $secondary-color;
+  .header-top { //to style the top part of the header
+    @include flex(center,);
+    min-height: 10vh;
+    margin-bottom: 3vh;
+    .logo, // to style the logo
+    .mobile-logo {
+      @include bold-font;
+      font-size: 4.2rem;
+      margin: 0 4%;
+    }
+    .mobile-logo { //to hide the mobile logo
+      display: none;
+      margin: 0;
+    }
+    i {  //to style the hamburger icon in the header
+      visibility: hidden;
+      @include bold-font;
+      font-size: 4.2rem;
+      cursor: pointer;
+      text-align: right;
+    }
+    label { //to style the toogle label of the hamburger icon
+      position: fixed;
+      top: 4vh;
+      right: 10%;
+      z-index: 10;
+    }
+    input[type="checkbox"] { /*hide the input, we don't need to see it */
+      display: none; 
+    }
+    nav {  //to style the main navigation bar
+      @include bold-font;
+      ul {
+        @include flex(center,);
+        li {
+          margin-right: 5%;
+          &:nth-child(2),
+          &:last-child {
+            margin-right: 0;
+          }
+          a:hover,
+          a:focus {
+            color: $light-color;
+          }
+        }
+      }
+    }
+  }
+}
+// --------------------------------------------
+// to style the home page header
+.home-header {
+  min-height: 100vh;
+  padding: 5vh 5vw;
+  .header-bottom { //tostyle the bottom part of the header
+    min-height: 80vh;
+    position: relative;
+    @include flex(flex-start,center);
+    .header-bottom-txt { //to style the title div in the header
+      margin-right: 100px;
+      position: relative;
+      .circle-text { //to style the circle image
+        position: absolute;
+        top: -90px;
+        left: -60px;
+      }
+      h1 {
+        font-size: 13rem;
+      }
+    }
+    .header-bottom-img { //to style the image div in the header
+      position: absolute;
+      bottom: -15vh;
+      top: 0;
+      right: 20px;
+      width: calc(50% - 100px);
+      filter: drop-shadow(20px 20px #fff);
+    }
+  }
+}
+// ---------------------------------------------
+// to style the header in blog and contact-us header
+.pages-header {
+  min-height: 70vh;
+  padding-top: 5vh;
+  .header-bottom { //to style the bottom part of header
+    min-height: 52vh;
+    background-image: url("./sophie-assets/blog-image-1.jpg");
+    background-size: cover;
+    background-position: 80%;
+    position: relative;
+    h1 {
+      position: absolute;
+      top: 45vh;
+    }
+    &.contact-us-header { //to style the bottom part of the contact-us page
+      background-image: url("./sophie-assets/contact-image-1.jpg");
+      background-position: center;
+    }
+  }
+}

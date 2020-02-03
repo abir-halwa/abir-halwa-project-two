@@ -1,0 +1,206 @@
+//media query for devices with a 600 maximum height
+@media (max-height: 600px) {
+  //change the header style
+  .header-bottom-img {
+    position: static;
+  }
+  .blog-header .header-bottom {
+    @include flex;
+    align-items: center;
+    h1 {
+      position: static;
+    }
+  }
+}
+//--------------------------------------------------------------------------
+//media query for devices with a 1150 maximum width
+@media (max-width: 1150px) {
+  //change h1 font size in the home page
+  .home-header .header-bottom .header-bottom-txt h1 {
+    font-size: calc(9.4vw + 2.2rem);
+  }
+  //change h2 font size in the home page
+  h2 {
+    font-size: calc(1.4vw + 2.1rem);
+  }
+  //style sophie-stuff section to be stacked
+  .sophie-stuff {
+    flex-direction: column;
+  }
+  .sophie-stuff-row-1,
+  .sophie-stuff-row-2 {
+    .sophie-stuff-bg {
+      width: 100%;
+      .sophie-stuff-img {
+        text-align: center;
+      }
+    }
+    .sophie-stuff-txt {
+      width: 100%;
+      padding: 10vh 5% 0;
+      text-align: center;
+      align-items: center;
+    }
+  }
+  .sophie-stuff-row-2 {
+    margin-bottom: 15vh;
+    .sophie-stuff-txt {
+      margin-top: 2vh;
+    }
+    .sophie-stuff-bg {
+      order: -1;
+    }
+  }
+}
+//--------------------------------------------------------------------------
+//media query for devices with a 1150 maximum width
+@media (max-width: 850px) {
+  //to change the header in the home page
+  .home-header .header-bottom {
+    justify-content: center;
+    .header-bottom-img {
+      display: none;
+    }
+    .header-bottom-txt {
+      margin-right: 0;
+      position: relative;
+    }
+  }
+  //to change the padding in the who-is section
+  .who-is {
+    padding: 10vh 0 15vh;
+  }
+  //to stack the elements in the important links section
+  .important-links {
+    padding: 10vh 0;
+    ul li {
+      width: 100%;
+      &:nth-child(1),
+      &:nth-child(2) {
+        margin-bottom: 0;
+      }
+      &:not(:last-child) {
+        margin-bottom: 10vh;
+      }
+    }
+  }
+  //to stack the elements in the journey section
+  .journey .wrapper {
+    flex-direction: column;
+    .journey-img {
+      width: 100%;
+      margin: 0 0 10vh;
+      text-align: center;
+      img {
+        display: inline;
+      }
+    }
+    .journey-txt {
+      width: 100%;
+      align-items: center;
+    }
+  }
+  //to stack the elements in both blog and contact-us section
+  .pages-main .pages-content {
+    flex-direction: column;
+    .right-part {
+      width: 100%;
+      order: -1;
+      margin-bottom: 8vh;
+    }
+    .left-part {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 10vh;
+    }
+  }
+}
+//--------------------------------------------------------------
+//media query for devices with a 1150 maximum width
+@media (max-width: 650px) {
+  //to style the header in all pages
+  header:not(.article-header) {
+    .header-top {
+      justify-content: space-between;
+      .mobile-logo {
+        display: inline-block;
+      }
+      i {
+        visibility: visible; // to show the hamburger icon
+      }
+      input[type="checkbox"]:checked ~ nav {
+        right: 0; /*when the checkbox is checked, show the menu*/
+      }
+      nav {
+        background: $primary-color;
+        position: fixed;
+        z-index: 10;
+        width: 50%;
+        right: -50%; /* to hide the nav from the screen */
+        top: 15%;
+        transition: all 0.8s; /*animation */
+        ul {
+          flex-direction: column;
+          li {
+            margin-right: 0;
+            &.logo {
+              display: none; //to hide the logo from the nav bar
+            }
+            a {
+              border-bottom: 1px solid $dark-color-2;
+              width: 100%;
+              padding: 15px;
+              color: $secondary-color;
+              text-align: center;
+              transition: all 0.3s; /* transition on the background color*/
+              &:hover,
+              &a:focus {
+                background: $accent-color-1;
+              }
+            }
+          }
+        }
+      }
+    }
+    .circle-text {
+      display: none;
+    }
+    //too style header-bottom in blog and contact-us pages
+    &.pages-header .header-bottom {
+      display: flex;
+      align-items: center;
+      @include flex(flex-start, center);
+      h1 {
+        position: static;
+      }
+    }
+  }
+  //end of header styles
+  // to hide the full image
+  .full-img {
+    display: none;
+  }
+  .important-links {
+    margin-bottom: 10vh;
+  }
+  //to stack the elements in the gallery section
+  .gallery {
+    ul {
+      flex-direction: column;
+      justify-content: center;
+      li {
+        width: 100%;
+        &:not(:last-child) {
+          margin-bottom: 7%;
+          margin-right: 0;
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .pages-main {
+    padding-top: 5vh;
+  }
+}

@@ -1,0 +1,15 @@
+// a mixin to change the display to flex
+@mixin  flex($justify:flex-start, $align:stretch) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    
+}
+
+// a mixin to apply some font properties
+@mixin bold-font {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+}
